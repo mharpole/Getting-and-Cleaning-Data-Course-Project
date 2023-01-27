@@ -69,7 +69,7 @@ the activity numerical representations were mutated to the descritiops
 mentioned before. Finally the combined data was grouped by subject id
 and activity and the mean of each variable was taken createing the final
 tidy data set.
-Please refer to the [Codebook](https://github.com/mharpole/Getting-and-Cleaning-Data-Course-Project/blob/main/run_analysis.md) for an indepth look at the code and data synthesized.
+Please refer to the [Codebook.md](https://github.com/mharpole/Getting-and-Cleaning-Data-Course-Project/blob/main/codebook.md) for an indepth look at the code and data synthesized.
 
 
 
