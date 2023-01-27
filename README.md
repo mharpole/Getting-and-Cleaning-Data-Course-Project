@@ -8,6 +8,7 @@ Course project: This project was to take data from ["Human Activity Recognition 
 - [run_analysis.R](https://github.com/mharpole/Getting-and-Cleaning-Data-Course-Project/blob/main/run_analysis.R)-This is the orgnial script authored to perform the requested tasks.
 - [run_analysis.RMD](https://github.com/mharpole/Getting-and-Cleaning-Data-Course-Project/blob/main/run_analysis.Rmd)-A R markdown version of the original script with more description utilized to generate a github document to be used as an in depth codebook.
 - [Codebook.md](https://github.com/mharpole/Getting-and-Cleaning-Data-Course-Project/blob/main/codebook.md)-Github document knitted from the run_analysis.RMD which shows an in-depth overview of the code and data generated from the run_analysis.
+- [tidy_data.txt](https://github.com/mharpole/Getting-and-Cleaning-Data-Course-Project/blob/main/tidy_data.txt)-final dataset written per project request
 
 ## Raw Data Description. 
 #### *The following description of the raw data was taken from the Dataset readme file, [Readme.txt](https://github.com/mharpole/Getting-and-Cleaning-Data-Course-Project/blob/main/UCI%20HAR%20Dataset/README.txt)*
