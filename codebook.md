@@ -1,7 +1,7 @@
 Run Analysis Codebook
 ================
 Michael G Harpole
-2023-01-26
+2023-01-27
 
 ## Grab feature names to label columns in the dataset
 
@@ -15,7 +15,7 @@ featureNamesData <-
 ```
 
     ## 
-    ## ── Column specification ────────────────────────────────────────────────────────
+    ## ── Column specification ──────────────────────────────────────────────────────────
     ## cols(
     ##   Index = col_double(),
     ##   Feature = col_character()
@@ -63,7 +63,7 @@ subject_test_data <-
 ```
 
     ## 
-    ## ── Column specification ────────────────────────────────────────────────────────
+    ## ── Column specification ──────────────────────────────────────────────────────────
     ## cols(
     ##   `Subject ID` = col_double()
     ## )
@@ -73,7 +73,7 @@ x_TestSet <- read_table(testfileList[2], col_names = FALSE)
 ```
 
     ## 
-    ## ── Column specification ────────────────────────────────────────────────────────
+    ## ── Column specification ──────────────────────────────────────────────────────────
     ## cols(
     ##   .default = col_double()
     ## )
@@ -89,7 +89,7 @@ y_TestSet <- read_table(testfileList[3], col_names = ("Activity"))
 ```
 
     ## 
-    ## ── Column specification ────────────────────────────────────────────────────────
+    ## ── Column specification ──────────────────────────────────────────────────────────
     ## cols(
     ##   Activity = col_double()
     ## )
@@ -101,18 +101,18 @@ testData
 ```
 
     ## # A tibble: 2,947 × 88
-    ##    `Subject ID` Activity timeB…¹ timeB…² timeB…³ timeG…⁴ timeG…⁵ timeG…⁶ timeB…⁷
-    ##           <dbl>    <dbl>   <dbl>   <dbl>   <dbl>   <dbl>   <dbl>   <dbl>   <dbl>
-    ##  1            2        5   0.257 -0.0233 -0.0147   0.936  -0.283   0.115  0.0720
-    ##  2            2        5   0.286 -0.0132 -0.119    0.927  -0.289   0.153  0.0702
-    ##  3            2        5   0.275 -0.0261 -0.118    0.930  -0.288   0.146  0.0694
-    ##  4            2        5   0.270 -0.0326 -0.118    0.929  -0.293   0.143  0.0749
-    ##  5            2        5   0.275 -0.0278 -0.130    0.927  -0.303   0.138  0.0784
-    ##  6            2        5   0.279 -0.0186 -0.114    0.926  -0.309   0.131  0.0760
-    ##  7            2        5   0.280 -0.0183 -0.104    0.926  -0.310   0.129  0.0741
-    ##  8            2        5   0.275 -0.0250 -0.117    0.927  -0.311   0.130  0.0762
-    ##  9            2        5   0.273 -0.0210 -0.114    0.926  -0.316   0.126  0.0792
-    ## 10            2        5   0.276 -0.0104 -0.0998   0.924  -0.318   0.125  0.0771
+    ##    `Subject ID` Activity timeBod…¹ timeB…² timeB…³ timeG…⁴ timeG…⁵ timeG…⁶ timeB…⁷
+    ##           <dbl>    <dbl>     <dbl>   <dbl>   <dbl>   <dbl>   <dbl>   <dbl>   <dbl>
+    ##  1            2        5     0.257 -0.0233 -0.0147   0.936  -0.283   0.115  0.0720
+    ##  2            2        5     0.286 -0.0132 -0.119    0.927  -0.289   0.153  0.0702
+    ##  3            2        5     0.275 -0.0261 -0.118    0.930  -0.288   0.146  0.0694
+    ##  4            2        5     0.270 -0.0326 -0.118    0.929  -0.293   0.143  0.0749
+    ##  5            2        5     0.275 -0.0278 -0.130    0.927  -0.303   0.138  0.0784
+    ##  6            2        5     0.279 -0.0186 -0.114    0.926  -0.309   0.131  0.0760
+    ##  7            2        5     0.280 -0.0183 -0.104    0.926  -0.310   0.129  0.0741
+    ##  8            2        5     0.275 -0.0250 -0.117    0.927  -0.311   0.130  0.0762
+    ##  9            2        5     0.273 -0.0210 -0.114    0.926  -0.316   0.126  0.0792
+    ## 10            2        5     0.276 -0.0104 -0.0998   0.924  -0.318   0.125  0.0771
     ## # … with 2,937 more rows, 79 more variables:
     ## #   `timeBodyAccelerationJerk mean  -Y` <dbl>,
     ## #   `timeBodyAccelerationJerk mean  -Z` <dbl>, `timeBodyGyro mean  -X` <dbl>,
@@ -157,7 +157,7 @@ subject_train_data <-
 ```
 
     ## 
-    ## ── Column specification ────────────────────────────────────────────────────────
+    ## ── Column specification ──────────────────────────────────────────────────────────
     ## cols(
     ##   `Subject ID` = col_double()
     ## )
@@ -167,7 +167,7 @@ x_TrainSet <- read_table(traningFileList[2], col_names = FALSE)
 ```
 
     ## 
-    ## ── Column specification ────────────────────────────────────────────────────────
+    ## ── Column specification ──────────────────────────────────────────────────────────
     ## cols(
     ##   .default = col_double()
     ## )
@@ -184,7 +184,7 @@ y_TrainSet <-
 ```
 
     ## 
-    ## ── Column specification ────────────────────────────────────────────────────────
+    ## ── Column specification ──────────────────────────────────────────────────────────
     ## cols(
     ##   Activity = col_double()
     ## )
@@ -196,18 +196,18 @@ trainData
 ```
 
     ## # A tibble: 7,352 × 88
-    ##    `Subject ID` Activ…¹ timeB…² timeBo…³ timeB…⁴ timeG…⁵ timeG…⁶ timeG…⁷ timeB…⁸
-    ##           <dbl>   <dbl>   <dbl>    <dbl>   <dbl>   <dbl>   <dbl>   <dbl>   <dbl>
-    ##  1            1       5   0.289 -0.0203   -0.133   0.963  -0.141  0.115   0.0780
-    ##  2            1       5   0.278 -0.0164   -0.124   0.967  -0.142  0.109   0.0740
-    ##  3            1       5   0.280 -0.0195   -0.113   0.967  -0.142  0.102   0.0736
-    ##  4            1       5   0.279 -0.0262   -0.123   0.968  -0.144  0.0999  0.0773
-    ##  5            1       5   0.277 -0.0166   -0.115   0.968  -0.149  0.0945  0.0734
-    ##  6            1       5   0.277 -0.0101   -0.105   0.968  -0.148  0.0919  0.0779
-    ##  7            1       5   0.279 -0.0196   -0.110   0.968  -0.144  0.0931  0.0822
-    ##  8            1       5   0.277 -0.0305   -0.125   0.968  -0.147  0.0917  0.0724
-    ##  9            1       5   0.277 -0.0218   -0.121   0.968  -0.154  0.0851  0.0753
-    ## 10            1       5   0.281 -0.00996  -0.106   0.968  -0.156  0.0809  0.0764
+    ##    `Subject ID` Activity timeBo…¹ timeBo…² timeB…³ timeG…⁴ timeG…⁵ timeG…⁶ timeB…⁷
+    ##           <dbl>    <dbl>    <dbl>    <dbl>   <dbl>   <dbl>   <dbl>   <dbl>   <dbl>
+    ##  1            1        5    0.289 -0.0203   -0.133   0.963  -0.141  0.115   0.0780
+    ##  2            1        5    0.278 -0.0164   -0.124   0.967  -0.142  0.109   0.0740
+    ##  3            1        5    0.280 -0.0195   -0.113   0.967  -0.142  0.102   0.0736
+    ##  4            1        5    0.279 -0.0262   -0.123   0.968  -0.144  0.0999  0.0773
+    ##  5            1        5    0.277 -0.0166   -0.115   0.968  -0.149  0.0945  0.0734
+    ##  6            1        5    0.277 -0.0101   -0.105   0.968  -0.148  0.0919  0.0779
+    ##  7            1        5    0.279 -0.0196   -0.110   0.968  -0.144  0.0931  0.0822
+    ##  8            1        5    0.277 -0.0305   -0.125   0.968  -0.147  0.0917  0.0724
+    ##  9            1        5    0.277 -0.0218   -0.121   0.968  -0.154  0.0851  0.0753
+    ## 10            1        5    0.281 -0.00996  -0.106   0.968  -0.156  0.0809  0.0764
     ## # … with 7,342 more rows, 79 more variables:
     ## #   `timeBodyAccelerationJerk mean  -Y` <dbl>,
     ## #   `timeBodyAccelerationJerk mean  -Z` <dbl>, `timeBodyGyro mean  -X` <dbl>,
@@ -239,7 +239,7 @@ activityLabels <-
 ```
 
     ## 
-    ## ── Column specification ────────────────────────────────────────────────────────
+    ## ── Column specification ──────────────────────────────────────────────────────────
     ## cols(
     ##   Index = col_double(),
     ##   Activity = col_character()
@@ -276,18 +276,18 @@ combinedData
 ```
 
     ## # A tibble: 10,299 × 88
-    ##    `Subject ID` Activity timeB…¹ timeB…² timeB…³ timeG…⁴ timeG…⁵ timeG…⁶ timeB…⁷
-    ##           <dbl> <chr>      <dbl>   <dbl>   <dbl>   <dbl>   <dbl>   <dbl>   <dbl>
-    ##  1            2 Standing   0.257 -0.0233 -0.0147   0.936  -0.283   0.115  0.0720
-    ##  2            2 Standing   0.286 -0.0132 -0.119    0.927  -0.289   0.153  0.0702
-    ##  3            2 Standing   0.275 -0.0261 -0.118    0.930  -0.288   0.146  0.0694
-    ##  4            2 Standing   0.270 -0.0326 -0.118    0.929  -0.293   0.143  0.0749
-    ##  5            2 Standing   0.275 -0.0278 -0.130    0.927  -0.303   0.138  0.0784
-    ##  6            2 Standing   0.279 -0.0186 -0.114    0.926  -0.309   0.131  0.0760
-    ##  7            2 Standing   0.280 -0.0183 -0.104    0.926  -0.310   0.129  0.0741
-    ##  8            2 Standing   0.275 -0.0250 -0.117    0.927  -0.311   0.130  0.0762
-    ##  9            2 Standing   0.273 -0.0210 -0.114    0.926  -0.316   0.126  0.0792
-    ## 10            2 Standing   0.276 -0.0104 -0.0998   0.924  -0.318   0.125  0.0771
+    ##    `Subject ID` Activity timeBod…¹ timeB…² timeB…³ timeG…⁴ timeG…⁵ timeG…⁶ timeB…⁷
+    ##           <dbl> <chr>        <dbl>   <dbl>   <dbl>   <dbl>   <dbl>   <dbl>   <dbl>
+    ##  1            2 Standing     0.257 -0.0233 -0.0147   0.936  -0.283   0.115  0.0720
+    ##  2            2 Standing     0.286 -0.0132 -0.119    0.927  -0.289   0.153  0.0702
+    ##  3            2 Standing     0.275 -0.0261 -0.118    0.930  -0.288   0.146  0.0694
+    ##  4            2 Standing     0.270 -0.0326 -0.118    0.929  -0.293   0.143  0.0749
+    ##  5            2 Standing     0.275 -0.0278 -0.130    0.927  -0.303   0.138  0.0784
+    ##  6            2 Standing     0.279 -0.0186 -0.114    0.926  -0.309   0.131  0.0760
+    ##  7            2 Standing     0.280 -0.0183 -0.104    0.926  -0.310   0.129  0.0741
+    ##  8            2 Standing     0.275 -0.0250 -0.117    0.927  -0.311   0.130  0.0762
+    ##  9            2 Standing     0.273 -0.0210 -0.114    0.926  -0.316   0.126  0.0792
+    ## 10            2 Standing     0.276 -0.0104 -0.0998   0.924  -0.318   0.125  0.0771
     ## # … with 10,289 more rows, 79 more variables:
     ## #   `timeBodyAccelerationJerk mean  -Y` <dbl>,
     ## #   `timeBodyAccelerationJerk mean  -Z` <dbl>, `timeBodyGyro mean  -X` <dbl>,
@@ -307,7 +307,33 @@ rm("activityLabels")
 meanCombinedData <- combinedData %>%
   group_by(`Subject ID`, Activity) %>%
   summarise_all(mean)
-meanCombinedData %>% write_csv("230125_meanCombinedData.csv")
+meanCombinedData %>% write_csv("230127_meanCombinedData.csv")
+meanCombinedData
+```
+
+    ## # A tibble: 180 × 88
+    ## # Groups:   Subject ID [30]
+    ##    `Subject ID` Activity  timeB…¹ timeBo…² timeB…³ timeG…⁴ timeG…⁵ timeG…⁶ timeB…⁷
+    ##           <dbl> <chr>       <dbl>    <dbl>   <dbl>   <dbl>   <dbl>   <dbl>   <dbl>
+    ##  1            1 Laying      0.222 -0.0405  -0.113   -0.249   0.706  0.446   0.0811
+    ##  2            1 Sitting     0.261 -0.00131 -0.105    0.832   0.204  0.332   0.0775
+    ##  3            1 Standing    0.279 -0.0161  -0.111    0.943  -0.273  0.0135  0.0754
+    ##  4            1 Walking     0.277 -0.0174  -0.111    0.935  -0.282 -0.0681  0.0740
+    ##  5            1 Walking …   0.289 -0.00992 -0.108    0.932  -0.267 -0.0621  0.0542
+    ##  6            1 Walking …   0.255 -0.0240  -0.0973   0.893  -0.362 -0.0754  0.101 
+    ##  7            2 Laying      0.281 -0.0182  -0.107   -0.510   0.753  0.647   0.0826
+    ##  8            2 Sitting     0.277 -0.0157  -0.109    0.940  -0.106  0.199   0.0723
+    ##  9            2 Standing    0.278 -0.0184  -0.106    0.897  -0.370  0.130   0.0748
+    ## 10            2 Walking     0.276 -0.0186  -0.106    0.913  -0.347  0.0847  0.0618
+    ## # … with 170 more rows, 79 more variables:
+    ## #   `timeBodyAccelerationJerk mean  -Y` <dbl>,
+    ## #   `timeBodyAccelerationJerk mean  -Z` <dbl>, `timeBodyGyro mean  -X` <dbl>,
+    ## #   `timeBodyGyro mean  -Y` <dbl>, `timeBodyGyro mean  -Z` <dbl>,
+    ## #   `timeBodyGyroJerk mean  -X` <dbl>, `timeBodyGyroJerk mean  -Y` <dbl>,
+    ## #   `timeBodyGyroJerk mean  -Z` <dbl>, `timeBodyAccelerationMag mean` <dbl>,
+    ## #   `timeGravityAccelerationMag mean` <dbl>, …
+
+``` r
 # clean up workspace
 rm(list = c("testData", "trainData"))
 ```
@@ -319,7 +345,6 @@ rm(list = c("testData", "trainData"))
     ## Running under: macOS Ventura 13.1
     ## 
     ## Matrix products: default
-    ## BLAS:   /Library/Frameworks/R.framework/Versions/4.2-arm64/Resources/lib/libRblas.0.dylib
     ## LAPACK: /Library/Frameworks/R.framework/Versions/4.2-arm64/Resources/lib/libRlapack.dylib
     ## 
     ## locale:
