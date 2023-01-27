@@ -1,10 +1,21 @@
-#Load libraries
+---
+title: "Run_Analysis.R"
+author: "Michael G Harpole"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
 library(tidyverse)
-# Grab feature names to label columns in the dataset ----------------------
+```
+
+## Grab feature names to label columns in the dataset
+The feature names, variables in the x prefixed datasets, where parsed from the file features.txt. Then utilizing regular expressions the variable names were cleaned up to 
+
+```{r featureNames}
 featureNamesData <-
   read_table("UCI HAR Dataset/features.txt", col_names = c("Index", "Feature"))
-head(featureNamesData)
-tail(featureNamesData)
 featureNames <- as.list(featureNamesData$Feature) %>%
   unlist() %>%
   str_replace_all("[//(//),]", " ") %>%
@@ -14,10 +25,13 @@ featureNames <- as.list(featureNamesData$Feature) %>%
   str_replace_all("^f", "Frequency") %>%
   str_replace_all("Acc", "Acceleration") %>%
   trimws()
-featureNames
 rm(featureNamesData)
-# Import Test Data, select only standard deviations and means ------------------
-# grab file list to simplify data import
+```
+
+## Import Test data
+First I extracted all of the filenames with a .txt extension from the test dataset directory and store it to a list. Utilizing the list I read in the file using read table. For the subject, subject_test_data,  and the activity, y_TestSet, data I manually assigned a column name. For the signal data, x_TestSet, I pulled in the variable names from the featureNames charcter vector created in the first chunk. Additionaly I selected only the mean and standard deviation from the signal data. Finally I combined them using the bind_cols function.
+
+```{r ImportTestData}
 testfileList <-
   list.files("./UCI HAR Dataset/test/",
              full.names = TRUE,
@@ -37,7 +51,7 @@ y_TestSet <- read_table(testfileList[3], col_names = ("Activity"))
 
 testData <-
   bind_cols(subject_test_data, y_TestSet, x_TestSet_selected)
-# View(testData)
+testData
 # clean up workspace
 rm(
   list = c(
@@ -48,7 +62,12 @@ rm(
     "x_TestSet_selected"
   )
 )
-# Import Training Data, select only standard deviations and means ---------------
+```
+
+
+## Import Training Data
+The training data was processed identically as the test data with the exception of different object names.
+```{r ImportTrainingData}
 traningFileList <-
   list.files("./UCI HAR Dataset/train/",
              full.names = TRUE,
@@ -69,6 +88,7 @@ y_TrainSet <-
 
 trainData <-
   bind_cols(subject_train_data, y_TrainSet, x_TrainSet_selected)
+trainData
 # clean up workspace
 rm(
   list = c(
@@ -80,8 +100,10 @@ rm(
     "featureNames"
   )
 )
-# View(trainData)
-# Combine data and label activities-----------
+```
+
+## Combine data and label activities with descriptions
+```{r combineDataLabelActivites}
 activityLabels <-
   read_table("UCI HAR Dataset/activity_labels.txt",
              col_names = c("Index", "Activity"))
@@ -101,11 +123,23 @@ combinedData <- bind_rows(testData, trainData) %>%
 combinedData
 # clean up workspace
 rm("activityLabels")
-# Summarize the mean by subject and activity ------------------------------
+```
 
+## Generate means by subject and activity
+
+```{r generateMeansBySubjectAndActivity}
 meanCombinedData <- combinedData %>%
   group_by(`Subject ID`, Activity) %>%
   summarise_all(mean)
-meanCombinedData %>% write_csv("230126_meanCombinedData.csv")
+meanCombinedData %>% write_csv("230125_meanCombinedData.csv")
 # clean up workspace
-rm(list = c("testData", "trainData", ))
+rm(list = c("testData", "trainData"))
+```
+
+## Session Information
+
+```{r sessionInformation, echo=FALSE}
+sessionInfo()
+
+```
+
