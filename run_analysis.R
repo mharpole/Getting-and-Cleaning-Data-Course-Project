@@ -107,5 +107,6 @@ meanCombinedData <- combinedData %>%
   group_by(`Subject ID`, Activity) %>%
   summarise_all(mean)
 meanCombinedData %>% write_csv("230126_meanCombinedData.csv")
+write.table(meanCombinedData,"tidy_data.txt", row.names = FALSE)
 # clean up workspace
 rm(list = c("testData", "trainData", ))
